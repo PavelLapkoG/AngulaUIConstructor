@@ -1,0 +1,21 @@
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
+}
+
+.mat-card {
+  margin: 10px 40px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-dialog-content{
+  overflow: inherit!important;
+}
+
+ul
+{
+  list-style-type: none;
+}
