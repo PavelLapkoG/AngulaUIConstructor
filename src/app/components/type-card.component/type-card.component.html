@@ -1,0 +1,45 @@
+<md-card>
+  <md-card-title *ngIf="typeCardData.type">
+    <div class="row">
+    <div class="col-md-7">{{typeCardData.type}}</div>
+    <div class="col-md-5 text-right"><button md-button  (click)="deleteCard()">Delete</button></div>
+    </div>
+  </md-card-title>
+  <md-card-content>
+    <div *ngIf="typeCardData.title">
+      <md-form-field class="example-full-width">
+        <input mdInput placeholder="Title" [(ngModel)]="typeCardData.title.value"
+                (keyup)="updateInput()" >
+      </md-form-field>
+    </div>
+    <div *ngIf="typeCardData.description" [ngSwitch]="typeCardData.description.key">
+    <div *ngSwitchCase="'TextArea Label'">
+      <md-form-field class="example-full-width">
+        <textarea mdInput placeholder="{{typeCardData.description.key}}"
+                  [(ngModel)]="typeCardData.description.value"
+                  (keyup)="updateInput()"></textarea>
+      </md-form-field>
+    </div>
+    <div *ngSwitchCase="'Checkbox Group Label'">
+      <div *ngFor="let checkbox of typeCardData.description.options; let i = index">
+      <md-checkbox [checked]="checkbox.value | strBool" (change)="updateCheckbox(i)">{{checkbox.title}}</md-checkbox>
+      </div>
+    </div>
+    <div *ngSwitchCase="'RadioButton Group Label'">
+      <md-radio-group>
+        <div *ngFor="let radio of typeCardData.description.options">
+          <md-radio-button value="{{radio.value}}"
+                           [checked]="radio.value === typeCardData.description.value"
+                           (change)="updateRadio(radio.value)">{{radio.title}}</md-radio-button>
+        </div>
+      </md-radio-group>
+    </div>
+    </div>
+
+    <form class="example-form">
+
+
+
+    </form>
+  </md-card-content>
+</md-card>

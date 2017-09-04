@@ -1,0 +1,12 @@
+<h1 md-dialog-title>Chooose card type</h1>
+<div md-dialog-content>
+  <md-radio-group>
+    <div *ngFor="let radio of radioArray">
+      <md-radio-button value="{{radio.value}}" [checked]="radio.value === selectedType" (change)="selectedType = radio.value">{{radio.title}}</md-radio-button>
+    </div>
+  </md-radio-group>
+</div>
+<div md-dialog-actions>
+  <button md-button [md-dialog-close]="selectedType" tabindex="2">Ok</button>
+  <button md-button  (click) = "onNoClick()" tabindex="-1">No Thanks</button>
+</div>

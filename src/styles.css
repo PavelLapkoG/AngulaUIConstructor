@@ -1,0 +1,8 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import 'assets/codemirror.css';
+@import 'assets/bootstrap.min.css';
+
+@import '../node_modules/ng2-dnd/style.css';
+@import 'assets/general.css';
+
+
