@@ -8,9 +8,11 @@ import {StringToBooleanPipe} from '../../pipes/stringBool';
 })
 
 export class TypeCardComponent {
+
   @Input() typeCardData;
   @Input() typeCardIndex;
   @Output() changeCardData = new EventEmitter();
+
   constructor(private strBool: StringToBooleanPipe) {
   }
 

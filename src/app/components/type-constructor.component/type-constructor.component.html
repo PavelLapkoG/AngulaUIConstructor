@@ -1,20 +1,27 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-md-6 text-center">
+    <div class="constructor-column col-md-6 text-center">
       <ul dnd-sortable-container [sortableData]="uiConstructorObject">
         <li *ngFor="let card of uiConstructorObject; let ci = index"  dnd-sortable [sortableIndex]="ci">
           <type-card [typeCardData]="card" [typeCardIndex]="ci" (changeCardData)="changeCardData($event)"></type-card>
         </li>
       </ul>
-      <button md-raised-button (click)="openAddDialog()">Add New Block</button>
+
     </div>
-  <div class="col-md-6">
+  <div class="constructor-column col-md-6">
     <codemirror
       [ngModel]="uiConstructorObject | json"
       (ngModelChange)="changeCode($event)"
-      [config]="{lineNumbers: true}">
+      [config]="{lineNumbers: true, mode:{name: 'javascript', json: true}}">
     </codemirror>
   </div>
   </div>
 </div>
+
+<footer>
+  <div class="col-md-6 text-center">
+    <button class="ui-margin-10" md-raised-button (click)="openAddDialog()">Add New Block</button>
+  </div>
+  <div class="col-md-6"></div>
+</footer>

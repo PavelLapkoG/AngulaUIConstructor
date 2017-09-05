@@ -19,3 +19,13 @@ ul
 {
   list-style-type: none;
 }
+
+.constructor-column {
+  overflow-y: auto;
+  height: 90vh;
+}
+
+.ui-margin-10 {
+  margin: 10px;
+}
+
