@@ -11,7 +11,7 @@ export const TYPE_CONST = {
     }
   },
   checkbox: {
-    type: 'blockType1',
+    type: 'blockType2',
     title: {
       key: 'TextBox Label',
       value: ''
@@ -34,7 +34,7 @@ export const TYPE_CONST = {
     }
   },
   radio: {
-    type: 'blockType1',
+    type: 'blockType3',
     title: {
       key: 'TextBox Label',
       value: ''
