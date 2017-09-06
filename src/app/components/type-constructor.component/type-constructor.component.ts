@@ -14,6 +14,7 @@ import {AddTypeCardDialogComponent} from '../../components/add-card-dialog.compo
 @Injectable()
 export class TypeConstructorComponent {
 
+  correctView = true;
   // 3 type by default
   uiConstructorObject  = [TYPE_CONST.textarea, TYPE_CONST.checkbox, TYPE_CONST.radio];
 
@@ -26,10 +27,12 @@ export class TypeConstructorComponent {
   changeCode(event) {
     try {
       this.uiConstructorObject = JSON.parse(event);
+      this.correctView = true;
     } catch (e) {
       // not valid JSON
+      this.correctView = false;
       console.log(e);
-      this.snackBar.open('Problems with JSON', 'Undo', {
+      this.snackBar.open(e.message, 'Undo', {
         duration: 2000
       });
     }

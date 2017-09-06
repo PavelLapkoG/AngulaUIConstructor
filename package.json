@@ -23,7 +23,6 @@
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
-    "@ng4/codemirror": "0.0.2",
     "core-js": "^2.4.1",
     "ng2-codemirror": "^1.1.3",
     "ng2-dnd": "^4.2.0",

@@ -1,19 +1,21 @@
 <div class="container">
   <div class="row">
 
-    <div class="constructor-column col-md-6 text-center">
-      <ul dnd-sortable-container [sortableData]="uiConstructorObject">
+    <div [ngClass]="{'error-panel': !correctView}" class="constructor-column col-md-6 text-center">
+      <ul dnd-sortable-container [sortableData]="uiConstructorObject" *ngIf="correctView">
         <li *ngFor="let card of uiConstructorObject; let ci = index"  dnd-sortable [sortableIndex]="ci">
           <type-card [typeCardData]="card" [typeCardIndex]="ci" (changeCardData)="changeCardData($event)"></type-card>
         </li>
       </ul>
-
+      <div *ngIf="!correctView">
+        Not valid JSON
+      </div>
     </div>
   <div class="constructor-column col-md-6">
     <codemirror
-      [ngModel]="uiConstructorObject | json"
       (ngModelChange)="changeCode($event)"
-      [config]="{lineNumbers: true, mode:{name: 'javascript', json: true}}">
+      [ngModel]="uiConstructorObject | json"
+      [config]="{lineNumbers: true}">
     </codemirror>
   </div>
   </div>
