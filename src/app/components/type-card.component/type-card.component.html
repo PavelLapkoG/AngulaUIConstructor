@@ -6,7 +6,7 @@
     </div>
   </md-card-title>
   <md-card-content>
-    <div *ngIf="typeCardData.title">
+    <div *ngIf="typeCardData.title && typeCardData.title.key === 'TextBox Label'">
       <md-form-field class="example-full-width">
         <input mdInput placeholder="Title" [(ngModel)]="typeCardData.title.value"
                 (keyup)="updateInput()" >
