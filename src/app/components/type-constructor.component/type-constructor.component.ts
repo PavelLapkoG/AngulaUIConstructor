@@ -31,7 +31,7 @@ export class TypeConstructorComponent {
     } catch (e) {
       // not valid JSON
       this.correctView = false;
-      console.log(e);
+      console.error(e);
       this.snackBar.open(e.message, 'Undo', {
         duration: 2000
       });
@@ -53,18 +53,7 @@ export class TypeConstructorComponent {
       width: '250px'
     });
     addDialog.afterClosed().subscribe(result => {
-      switch (result) {
-        case 1 :
-          this.uiConstructorObject.push(TYPE_CONST.textarea);
-          break;
-        case 2 :
-          this.uiConstructorObject.push(TYPE_CONST.checkbox);
-          break;
-        case 3 :
-          this.uiConstructorObject.push(TYPE_CONST.radio);
-          break;
-        default : return;
-      }
+      this.uiConstructorObject.push(TYPE_CONST[result]);
     });
   }
 }

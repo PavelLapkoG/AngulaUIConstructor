@@ -21,14 +21,12 @@ export class TypeCardComponent {
   }
 
   updateCheckbox(index){
-    let booleanValue = this.strBool.transform(this.typeCardData.description.options[index].value);
-    booleanValue = !booleanValue;
+    const booleanValue = !this.strBool.transform(this.typeCardData.description.options[index].value);
     this.typeCardData.description.options[index].value = booleanValue.toString() ;
     this.changeCardData.emit({index: this.typeCardIndex, data: this.typeCardData});
   }
 
   updateRadio(value) {
-    console.log(value);
     this.typeCardData.description.value = value;
     this.changeCardData.emit({index: this.typeCardIndex, data: this.typeCardData});
   }

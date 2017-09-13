@@ -9,12 +9,12 @@ import {MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
 export class AddTypeCardDialogComponent {
 
   radioArray = [
-    {value: 1, title: 'TextArea'},
-    {value: 2, title: 'Checkbox'},
-    {value: 3, title: 'Radio'},
+    {value: 'textarea', title: 'TextArea'},
+    {value: 'checkbox', title: 'Checkbox'},
+    {value: 'radio', title: 'Radio'},
   ];
 
-  selectedType = 1;
+  selectedType = 'textarea';
 
   constructor(
     public dialogRef: MdDialogRef<AddTypeCardDialogComponent>,
